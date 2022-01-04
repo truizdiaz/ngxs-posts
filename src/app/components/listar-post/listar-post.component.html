@@ -1,0 +1,7 @@
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let post of $posts | async">
+        {{ post.text }}
+    <button class="btn btn-danger btn-sm float-end" (click)="removePost(post.id)" >Eliminar</button>
+    </li>
+</ul>
+<h5 *ngIf="($posts | async)?.length == 0">No hay post para mostrar</h5>
